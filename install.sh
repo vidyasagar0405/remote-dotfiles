@@ -9,6 +9,12 @@ sudo apt install -y \
     tmux \
     zsh \
 
+rm -rf ~/.bash_aliases
+rm -rf ~/.bash_funcs
+rm -rf ~/.bashrc
+rm -rf ~/.config/nvim
+rm -rf ~/.config/tmux
+rm -rf ~/.zshrc
 
 ln -s .bash_aliases ~/.bash_aliases
 ln -s .bash_funcs ~/.bash_funcs
@@ -25,7 +31,7 @@ curl -LO "$URL"
 chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract >/dev/null
 mkdir -p ~/.local/bin
-ln -s $(pwd)/squashfs-root/AppRun /home/gitpod/.local/bin/nvim
+ln -s $(pwd)/squashfs-root/AppRun ~/.local/bin/nvim
 
 # Setup git completions for bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
