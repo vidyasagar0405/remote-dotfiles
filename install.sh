@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y stow
-stow bash
-stow nvim
-stow starship
-stow tmux
+sudo apt update -y && sudo apt upgrade -y
+
+sudo apt install -y \
+    git \
+    curl \
+    wget \
+    tmux \
+    zsh \
+
+
+ln -s
 
 cd $(mktemp -d)
 
-URL="https://github.com/neovim/neovim/releases/latest/download/nvim.appimage"
-if test -n "$NEOVIM_VERSION"
-then
-    URL="https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim.appimage"
-fi
+URL="curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage"
 
 curl -LO "$URL"
 chmod u+x nvim.appimage
