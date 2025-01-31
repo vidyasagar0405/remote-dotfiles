@@ -23,15 +23,13 @@ ln -s nvim ~/.config/nvim
 ln -s tmux ~/.config/tmux
 ln -s .zshrc ~/.zshrc
 
-cd $(mktemp -d)
-
 URL="curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage"
 
 curl -LO "$URL"
-chmod u+x nvim.appimage
+chmod u+x nvim*
 ./nvim.appimage --appimage-extract >/dev/null
 mkdir -p ~/.local/bin
-ln -s $(pwd)/squashfs-root/AppRun ~/.local/bin/nvim
+ln -s squashfs-root/AppRun ~/.local/bin/nvim
 
 # Setup git completions for bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
