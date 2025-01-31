@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -61,7 +61,7 @@ ZSH_THEME="robbyrussell"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -78,7 +78,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -125,7 +125,7 @@ plugins=(
     git
     )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -133,13 +133,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
 
 # Compilations flags
 export ARCHFLAGS="-arch $(uname -m)"
@@ -154,30 +147,14 @@ export ARCHFLAGS="-arch $(uname -m)"
 #
 # Example aliases
 alias ezrc="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias cat='bat'
 
 alias ls='ls -aFh --color=always' # add colors and file type extensions
 alias l='ls'
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
-#  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
-#  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
+#  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │
+#  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴
 
-# Install Starship - curl -sS https://starship.rs/install.sh | sh
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-# bind '"\C-f":"zi\n"'
-
-zi() __zoxide_zi
-zle -N zi
-bindkey '^f' zi
-
-# defined in .bash_funcs
-zle -N cd_to_dir
-bindkey '^p' cd_to_dir
-
-# Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 source /usr/share/fzf/key-bindings.zsh
 
@@ -209,8 +186,3 @@ export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 
 . /opt/asdf-vm/asdf.sh
 export PATH=/home/vs/edirect:${PATH}
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit

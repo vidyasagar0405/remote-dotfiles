@@ -465,18 +465,8 @@ function hb {
 # Set the ultimate amazing command prompt
 #######################################################
 
-alias hug="hugo server -F --bind=10.0.0.97 --baseURL=http://10.0.0.97"
-bind '"\C-f":"zi\n"'
-
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
-# Install Starship - curl -sS https://starship.rs/install.sh | sh
-eval "$(starship init bash)"
-eval "$(zoxide init bash)"
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
-
-#. /usr/share/fzf/key-bindings.bash
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -493,7 +483,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-eval "$(thefuck --alias)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export TERM='xterm-kitty'
@@ -504,13 +493,3 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 # export PATH=$PATH:$HOME/.cargo/bin
 
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
-setuppy
-
-# [[ ! ${BLE_VERSION-} ]] || ble-attach
-############################################################################################################################################################
-
-. /opt/asdf-vm/asdf.sh
-export PATH=/home/vs/edirect:${PATH}
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"

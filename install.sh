@@ -4,7 +4,6 @@
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y git curl wget tmux zsh fd-find ripgrep fzf zoxide
 
-
 # Fix Symbolic Link Loops
 rm -rf ~/.bash_aliases ~/.bash_funcs ~/.bashrc ~/.config/nvim ~/.config/tmux ~/.zshrc
 
