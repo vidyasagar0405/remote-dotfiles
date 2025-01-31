@@ -10,7 +10,12 @@ sudo apt install -y \
     zsh \
 
 
-ln -s
+ln -s .bash_aliases ~/.bash_aliases
+ln -s .bash_funcs ~/.bash_funcs
+ln -s .bashrc ~/.bashrc
+ln -s nvim ~/.config/nvim
+ln -s tmux ~/.config/tmux
+ln -s .zshrc ~/.zshrc
 
 cd $(mktemp -d)
 
