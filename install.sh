@@ -23,11 +23,14 @@ ln -s nvim ~/.config/nvim
 ln -s tmux ~/.config/tmux
 ln -s .zshrc ~/.zshrc
 
+source ~/.bashrc
+source ~/.zshrc
+
 URL="curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage"
 
 curl -LO "$URL"
-chmod u+x nvim*
-./nvim.appimage --appimage-extract >/dev/null
+chmod u+x nvim-linux-x86_64.appimage
+./nvim-linux-x86_64.appimage --appimage-extract >/dev/null
 mkdir -p ~/.local/bin
 ln -s squashfs-root/AppRun ~/.local/bin/nvim
 
