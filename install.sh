@@ -2,9 +2,7 @@
 
 # Update & Install Dependencies
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y git curl wget tmux zsh ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
-
-
+sudo apt install -y git curl wget tmux zsh fd-find ripgrep fzf zoxide
 
 
 # Fix Symbolic Link Loops
@@ -44,7 +42,3 @@ fi
 # Setup Git Completions
 curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 echo "source ~/.git-completion.bash" >> ~/.bashrc
-
-wget https://github.com/sxyazi/yazi/releases/download/v0.4.2/yazi-x86_64-unknown-linux-gnu.zip
-unzip yazi-x86_64-unknown-linux-gnu.zip
-mv yazi-x86_64-unknown-linux-gnu/yazi ~/.local/bin
