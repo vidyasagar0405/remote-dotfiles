@@ -470,14 +470,14 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/vs/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/root/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/vs/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/vs/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/root/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/root/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/vs/miniconda3/bin:$PATH"
+        export PATH="/root/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -485,7 +485,7 @@ unset __conda_setup
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export TERM='xterm-kitty'
+export TERM='xterm'
 # export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall/"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
@@ -493,3 +493,4 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 # export PATH=$PATH:$HOME/.cargo/bin
 
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
+source ~/.git-completion.bash
